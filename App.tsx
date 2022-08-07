@@ -12,9 +12,8 @@ export type AppStackParamList = {
 	Error: {message: string};
 };
 
-const RootStack = createNativeStackNavigator<AppStackParamList>();
-
 function App() {
+	const RootStack = createNativeStackNavigator<AppStackParamList>();
 	return (
 		<NavigationContainer>
 			<RootStack.Navigator initialRouteName="Init">
