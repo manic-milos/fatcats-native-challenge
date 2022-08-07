@@ -1,4 +1,3 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import {
 	FlatList, SafeAreaView, View,
@@ -7,13 +6,8 @@ import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 import RocketListItem from '../../components/Rockets/RocketListItem';
 import { useGetRockets } from '../../hooks/useGetRockets';
-import { RocketStackParamList } from './RocketsHome';
 
-function Rockets({
-	navigation,
-}: {
-  navigation: NativeStackNavigationProp<RocketStackParamList>;
-}) {
+function Rockets() {
 	const {
 		rockets, error, loading, requestRefresh,
 	} = useGetRockets();

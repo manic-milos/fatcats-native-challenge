@@ -2,7 +2,6 @@ import React from 'react';
 import { SafeAreaView, Platform } from 'react-native';
 import { CrewStackParamList } from '../CrewList/CrewHome';
 import { RouteProp } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import Error from '../../components/Error';
 import CrewMemberDetails from '../../components/Crew/CrewMemberDetails';
 import RequestPermissionsAndroid from '../../components/Permissions/RequestPermissionsAndroid';
@@ -10,13 +9,7 @@ import RequestPermissionsIOS from '../../components/Permissions/RequestPermissio
 
 type DetailsScreenRouteProp = RouteProp<CrewStackParamList, 'CrewMember'>;
 
-function CrewMember({
-	route: { params },
-	navigation,
-}: {
-  route: DetailsScreenRouteProp;
-  navigation: NativeStackNavigationProp<CrewStackParamList, 'CrewMember'>;
-}) {
+function CrewMember({ route: { params } }: { route: DetailsScreenRouteProp}) {
 	if (Platform.OS === 'android') {
 		return (
 			<RequestPermissionsAndroid>

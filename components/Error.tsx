@@ -1,13 +1,12 @@
 import { View, Text, Button } from 'react-native';
 import React from 'react';
 
-function Error({
-	error,
-	goBackCallback,
-}: {
+type ErrorProps = {
   error: string;
   goBackCallback: () => void;
-}) {
+};
+
+function Error({ error, goBackCallback }: ErrorProps) {
 	return (
 		<View
 			style={{

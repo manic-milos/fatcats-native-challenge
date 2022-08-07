@@ -4,11 +4,7 @@ import { useGetPermissionAndroid } from '../../hooks/useGetPermissionAndroid';
 import Error from '../Error';
 import Loading from '../Loading';
 
-function RequestPermissionsAndroid<TChildren>({
-	children,
-}: {
-  children: TChildren;
-}) {
+function RequestPermissionsAndroid<TChildren>({	children }: { children: TChildren}) {
 	const { ...mediaPermissions } = useGetPermissionAndroid(
 		PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
 	);

@@ -6,11 +6,9 @@ import { useCheckNetState } from '../../hooks/useCheckNetState';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 
-function Init({
-	navigation,
-}: {
-  navigation: NativeStackNavigationProp<AppStackParamList, 'Init'>;
-}) {
+type InitStackParamList = NativeStackNavigationProp<AppStackParamList, 'Init'>;
+
+function Init({	navigation }: { navigation: InitStackParamList}) {
 	const { isOnline, error: errorNet, retry: retryNet } = useCheckNetState();
 	const { isAvailable, error: errorAPI, retry: retryAPI } = useCheckAPI();
 

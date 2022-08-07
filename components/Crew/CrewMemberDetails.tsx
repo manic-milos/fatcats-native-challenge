@@ -64,7 +64,6 @@ function CrewMemberDetails({ person }: {person: Crew}) {
 						}}
 					>
 						Loading image...
-
 					</Text>
 				</View>
 			</ScrollView>

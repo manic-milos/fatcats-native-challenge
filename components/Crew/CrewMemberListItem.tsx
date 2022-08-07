@@ -7,13 +7,12 @@ import { Crew } from '../../API';
 import { CrewStackParamList } from '../../screens/CrewList/CrewHome';
 import Status from '../Status';
 
-function CrewMemberListItem<TPage extends keyof CrewStackParamList>({
-	person,
-	navigation,
-}: {
-  person: Crew;
-  navigation: NativeStackNavigationProp<CrewStackParamList, TPage>;
-}) {
+type CrewMemberListItemProps<TPage extends keyof CrewStackParamList> = {
+    person: Crew;
+    navigation: NativeStackNavigationProp<CrewStackParamList, TPage>;
+};
+
+function CrewMemberListItem<TPage extends keyof CrewStackParamList>({ person, navigation }: CrewMemberListItemProps<TPage>) {
 	return (
 		<Pressable
 			style={[rowStyles.header, rowStyles.item]}

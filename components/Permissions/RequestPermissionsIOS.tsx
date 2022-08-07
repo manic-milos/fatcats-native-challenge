@@ -12,7 +12,7 @@ function RequestPermissionsIOS<TChildren>({ children } : {children: TChildren}) 
 		PERMISSIONS.IOS.MEDIA_LIBRARY,
 	);
 	const { ...ioscameraPermissions } = useGetPermissionIOS(
-		PERMISSIONS.IOS.MEDIA_LIBRARY,
+		PERMISSIONS.IOS.CAMERA,
 	);
 	if (attPermissions.error) {
 		return (
