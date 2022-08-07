@@ -1,11 +1,12 @@
 import React from 'react';
-import { Text, View, PermissionsAndroid } from 'react-native';
+import { View, PermissionsAndroid, SafeAreaView } from 'react-native';
 import { CrewStackParamList } from '../CrewList/CrewHome';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useGetPermissionAndroid } from '../../hooks/useGetPermissionAndroid';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
+import CrewMemberDetails from '../../components/Crew/CrewMemberDetails';
 
 type DetailsScreenRouteProp = RouteProp<CrewStackParamList, 'CrewMember'>;
 
@@ -32,7 +33,7 @@ function CrewMember({
 		);
 	}
 	if (cameraPermissions.error) {
-		return 	(
+		return (
 			<Error
 				error={cameraPermissions.error}
 				goBackCallback={() => cameraPermissions.retry()}
@@ -42,9 +43,15 @@ function CrewMember({
 	if (mediaPermissions.loading || cameraPermissions.loading) return <Loading />;
 
 	return (
-		<View>
-			<Text>{params.id}</Text>
-		</View>
+		<SafeAreaView style={{ flex: 1 }}>
+			<View
+				style={{
+					flex: 1,
+				}}
+			>
+				<CrewMemberDetails person={params} />
+			</View>
+		</SafeAreaView>
 	);
 }
 

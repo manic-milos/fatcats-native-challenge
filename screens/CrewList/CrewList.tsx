@@ -1,12 +1,13 @@
 import React from 'react';
 import {
-	Button, SafeAreaView, FlatList,
+	SafeAreaView, FlatList,
 } from 'react-native';
 import { CrewStackParamList } from './CrewHome';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useGetCrew } from '../../hooks/useGetCrew';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
+import CrewMemberListItem from '../../components/Crew/CrewMemberListItem';
 
 function CrewList({
 	navigation,
@@ -25,11 +26,7 @@ function CrewList({
 			<FlatList
 				data={crew}
 				renderItem={({ item }) => (
-					<Button
-						onPress={() =>
-							navigation.navigate({ name: 'CrewMember', params: item })}
-						title={item.name}
-					/>
+					<CrewMemberListItem person={item} navigation={navigation} />
 				)}
 				keyExtractor={(item, index) => item.id}
 			/>

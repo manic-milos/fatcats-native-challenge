@@ -18,7 +18,11 @@ function App() {
 	return (
 		<NavigationContainer>
 			<RootStack.Navigator initialRouteName="Init">
-				<RootStack.Screen name="Init" component={Init} />
+				<RootStack.Screen
+					name="Init"
+					component={Init}
+					options={{ headerShown: false }}
+				/>
 				<RootStack.Screen
 					name="Home"
 					component={Home}

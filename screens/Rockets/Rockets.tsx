@@ -1,10 +1,11 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import {
-	FlatList, SafeAreaView, Text, View,
+	FlatList, SafeAreaView, View,
 } from 'react-native';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
+import RocketListItem from '../../components/Rockets/RocketListItem';
 import { useGetRockets } from '../../hooks/useGetRockets';
 import { RocketStackParamList } from './RocketsHome';
 
@@ -26,7 +27,7 @@ function Rockets({
 			<View>
 				<FlatList
 					data={rockets}
-					renderItem={({ item }) => <Text>{item.name}</Text>}
+					renderItem={({ item }) => <RocketListItem rocket={item} />}
 					keyExtractor={(item, index) => item.id}
 				/>
 			</View>

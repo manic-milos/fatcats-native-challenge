@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 
 function Home() {
 	return (
-		<Tab.Navigator initialRouteName="Crew">
+		<Tab.Navigator initialRouteName="RocketsHome">
 			<Tab.Screen
 				name="RocketsHome"
 				component={RocketsHome}
