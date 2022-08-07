@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react';
-import { PermissionsAndroid, Permission, Platform } from 'react-native';
+import { Platform } from 'react-native';
+import { Permission, request } from 'react-native-permissions';
 
-export function useGetPermissionAndroid(askedPermission: Permission) {
+export function useGetPermissionIOS(askedPermission:Permission) {
 	const [permission, setPermission] = useState<string>();
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string>();
+
 	useEffect(() => {
-		if (Platform.OS !== 'android') {
+		if (Platform.OS !== 'ios') {
 			setLoading(false);
 			return;
 		}
 		if (!loading) return;
 		setError(undefined);
-		PermissionsAndroid.request(askedPermission)
+		request(askedPermission)
 			.then((granted) => {
 				setPermission(granted);
 				if (granted !== 'granted') setError('Permission denied');

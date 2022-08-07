@@ -20,8 +20,8 @@ function Init({
 		}
 	}, [isAvailable, isOnline, navigation]);
 
-	if (errorNet) return <Error error={errorNet} goBackCallback={() => retryNet()} />;
-	if (errorAPI) return <Error error={errorAPI} goBackCallback={() => retryAPI()} />;
+	if (errorNet) { return <Error error={errorNet} goBackCallback={() => retryNet()} />; }
+	if (errorAPI) { return <Error error={errorAPI} goBackCallback={() => retryAPI()} />; }
 	return <Loading />;
 }
 
