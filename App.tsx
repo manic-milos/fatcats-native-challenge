@@ -1,28 +1,31 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Rockets from './screens/Rockets/Rockets';
-import CrewHome, { CrewStackParamList } from './screens/CrewList/CrewHome';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './screens/Home/Home';
+import Error from './components/Error';
+import Init from './screens/Home/Init';
 
-export type RootTabParamList = {
-  Rockets: undefined;
-  Crew: CrewStackParamList;
+export type AppStackParamList = {
+	Init: undefined
+	Home: undefined;
+	Error: {message: string};
 };
 
-const Tab = createBottomTabNavigator<RootTabParamList>();
+const RootStack = createNativeStackNavigator<AppStackParamList>();
 
 function App() {
 	return (
 		<NavigationContainer>
-			<Tab.Navigator initialRouteName="Crew">
-				<Tab.Screen name="Rockets" component={Rockets} />
-				<Tab.Screen
-					name="Crew"
-					component={CrewHome}
+			<RootStack.Navigator initialRouteName="Init">
+				<RootStack.Screen name="Init" component={Init} />
+				<RootStack.Screen
+					name="Home"
+					component={Home}
 					options={{ headerShown: false }}
 				/>
-			</Tab.Navigator>
+				<RootStack.Screen name="Error" component={Error} />
+			</RootStack.Navigator>
 		</NavigationContainer>
 	);
 }
