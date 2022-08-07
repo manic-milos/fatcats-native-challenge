@@ -3,7 +3,7 @@ import { Text, View, PermissionsAndroid } from 'react-native';
 import { CrewStackParamList } from '../CrewList/CrewHome';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { useGetPermissionAndroid } from '../../components/useGetPermissionAndroid';
+import { useGetPermissionAndroid } from '../../hooks/useGetPermissionAndroid';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 
@@ -32,7 +32,7 @@ function CrewMember({
 		);
 	}
 	if (cameraPermissions.error) {
-		return (
+		return 	(
 			<Error
 				error={cameraPermissions.error}
 				goBackCallback={() => cameraPermissions.retry()}
