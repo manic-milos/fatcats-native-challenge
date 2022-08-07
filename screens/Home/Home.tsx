@@ -14,7 +14,17 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 
 function Home() {
 	return (
-		<Tab.Navigator initialRouteName="RocketsHome">
+		<Tab.Navigator
+			initialRouteName="RocketsHome"
+			screenOptions={{
+				tabBarLabelPosition: 'beside-icon',
+				tabBarLabelStyle: {
+					fontSize: 15,
+					fontWeight: 'bold',
+				},
+				tabBarIconStyle: { display: 'none' },
+			}}
+		>
 			<Tab.Screen
 				name="RocketsHome"
 				component={RocketsHome}

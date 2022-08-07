@@ -17,7 +17,7 @@ function CrewHome() {
 			<CrewStack.Screen
 				name="CrewList"
 				component={CrewList}
-				options={{ headerTitle: 'SpaceX Crew' }}
+				options={{ headerTitle: 'Crew' }}
 			/>
 			<CrewStack.Group screenOptions={{ presentation: 'modal' }}>
 				<CrewStack.Screen
