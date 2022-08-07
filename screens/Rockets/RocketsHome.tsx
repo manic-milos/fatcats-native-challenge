@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Rockets from './Rockets';
+import Rockets from '../../components/Rockets/Rockets';
 import Error from '../../components/Error';
 
 export type RocketStackParamList = {
@@ -9,6 +9,11 @@ export type RocketStackParamList = {
   Error: {message: string};
 };
 
+/**
+ * Home Screen for the Rockets screen.
+ * It contains the navigation for the Rockets screen, and the Error screen.
+ * @todo it is currently useless, because Error component is not navigated to from anywhere.
+ */
 function RocketsHome() {
 	const RocketsStack = createNativeStackNavigator<RocketStackParamList>();
 	return (

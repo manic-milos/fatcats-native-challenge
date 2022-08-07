@@ -12,6 +12,11 @@ export type RootTabParamList = {
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
+/**
+ * The main tab navigator for the app.
+ * After Init screen checks everything successfully,
+ * it navigates here.
+ */
 function Home() {
 	return (
 		<Tab.Navigator

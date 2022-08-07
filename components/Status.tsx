@@ -1,6 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
+/**
+ * A small component to display entity status.
+ * It is used to display a crew member's status, and a rocket's status.
+ * It is also already positioned in the row/header.
+ * @param status The status to display.
+ */
 function Status({ status } : {status: string}) {
 	return (
 		<View>

@@ -12,6 +12,12 @@ export type AppStackParamList = {
 	Error: {message: string};
 };
 
+/**
+ *
+ * App component contains first navigation stack, that first navigates to Init screen,
+ * where it checks if internet is available and if API is available. If both are available,
+ * Init screen navigates to Home screen. If one of them is not available, Init screen navigates to Error screen.
+ */
 function App() {
 	const RootStack = createNativeStackNavigator<AppStackParamList>();
 	return (

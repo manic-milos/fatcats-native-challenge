@@ -12,6 +12,12 @@ type CrewMemberListItemProps<TPage extends keyof CrewStackParamList> = {
     navigation: NativeStackNavigationProp<CrewStackParamList, TPage>;
 };
 
+/**
+ * Renders information about a crew member in a list item.
+ * When pressed, it redirects to the CrewMember screen.
+ * @param person - crew member to display
+ * @param navigation - navigation prop from navigation stack to use for redirecting to CrewMember screen
+ */
 function CrewMemberListItem<TPage extends keyof CrewStackParamList>({ person, navigation }: CrewMemberListItemProps<TPage>) {
 	return (
 		<Pressable

@@ -1,22 +1,18 @@
 import React from 'react';
 
 import {
-	Image,
-	ScrollView,
-	StyleSheet,
-	Text,
-	View,
+	Image, ScrollView, StyleSheet, Text, View,
 } from 'react-native';
 import { rowStyles } from './CrewMemberListItem';
 import { Crew } from '../../API';
 
+/**
+ * Renders the details of a crew member, including the image.
+ * @param {person:Crew} a crew member object got from the API.
+ */
 function CrewMemberDetails({ person }: {person: Crew}) {
 	return (
-		<View
-			style={{
-				flex: 1,
-			}}
-		>
+		<View style={{ flex: 1 }}>
 			<ScrollView
 				style={{
 					flex: 1,
@@ -34,17 +30,16 @@ function CrewMemberDetails({ person }: {person: Crew}) {
 				<View style={[rowStyles.item, rowStyles.header]}>
 					<Text style={fieldStyles.label}>Name:</Text>
 					<Text style={fieldStyles.field}>{person.name}</Text>
-
 				</View>
 				<View style={[rowStyles.item, rowStyles.header]}>
 					<Text style={fieldStyles.label}>Agency:</Text>
-					<Text style={[fieldStyles.field, { fontWeight: 'bold' }]}>{person.agency}</Text>
-
+					<Text style={[fieldStyles.field, { fontWeight: 'bold' }]}>
+						{person.agency}
+					</Text>
 				</View>
 				<View style={[rowStyles.item, rowStyles.header]}>
 					<Text style={fieldStyles.label}>Status:</Text>
 					<Text style={fieldStyles.field}>{person.status}</Text>
-
 				</View>
 				<View>
 					<Image
@@ -90,5 +85,4 @@ export const fieldStyles = StyleSheet.create({
 		borderColor: '#ccc',
 		padding: 5,
 	},
-
 });

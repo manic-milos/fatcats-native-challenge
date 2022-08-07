@@ -7,6 +7,11 @@ import { rowStyles } from '../Crew/CrewMemberListItem';
 import { fieldStyles } from '../Crew/CrewMemberDetails';
 import Status from '../Status';
 
+/**
+ * Renders a row with rocket data.
+ * When clicked, it will open the details of the rocket inplace.
+ * @param rocket a rocket object got from the API.
+ */
 function RocketListItem({ rocket }: {rocket: Rocket}) {
 	const [detailsOpened, setDetailsOpened] = useState(false);
 

@@ -9,6 +9,11 @@ import RequestPermissionsIOS from '../../components/Permissions/RequestPermissio
 
 type DetailsScreenRouteProp = RouteProp<CrewStackParamList, 'CrewMember'>;
 
+/**
+ * Screen for the details of a crew member.
+ * It checks permissions and shows the details of the crew member.
+ * @param route.params - params is the person got from route when navigated from CrewList.
+ */
 function CrewMember({ route: { params } }: { route: DetailsScreenRouteProp}) {
 	if (Platform.OS === 'android') {
 		return (

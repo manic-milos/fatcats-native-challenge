@@ -11,6 +11,10 @@ export type CrewStackParamList = {
 
 const CrewStack = createNativeStackNavigator<CrewStackParamList>();
 
+/**
+ * Home Screen for the Crew list screen. It contains the navigation for the Crew list screen and the Crew member screen.
+ * CrewMember screen is navigated to from the CrewList screen, and it is modal.
+ */
 function CrewHome() {
 	return (
 		<CrewStack.Navigator initialRouteName="CrewList">

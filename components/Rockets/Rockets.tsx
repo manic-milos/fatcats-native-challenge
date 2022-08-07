@@ -7,6 +7,12 @@ import Loading from '../../components/Loading';
 import RocketListItem from '../../components/Rockets/RocketListItem';
 import { useGetRockets } from '../../hooks/useGetRockets';
 
+/**
+ * Renders a list of rockets.
+ * While it fetches the rockets, it displays a Loading screen.
+ * If an error occurs, it displays an Error screen.
+ * click on a rocket will open the details on the row.
+ */
 function Rockets() {
 	const {
 		rockets, error, loading, requestRefresh,

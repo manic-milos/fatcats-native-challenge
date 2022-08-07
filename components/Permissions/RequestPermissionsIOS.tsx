@@ -3,7 +3,16 @@ import { PERMISSIONS } from 'react-native-permissions';
 import { useGetPermissionIOS } from '../../hooks/useGetPermissionIOS';
 import Error from '../Error';
 import Loading from '../Loading';
-
+/**
+ * A wrapper component to request permissions on iOS.
+ * It is used to request permissions for the following permissions:
+ *  -App Tracking Transparency
+ * - Camera
+ * - Gallery
+ * if any of these permissions are not granted, the Error component is displayed.
+ * If all permissions are granted, the children are rendered.
+ * @param children - children of the component to render inside.
+ */
 function RequestPermissionsIOS<TChildren>({ children } : {children: TChildren}) {
 	const { ...attPermissions } = useGetPermissionIOS(
 		PERMISSIONS.IOS.APP_TRACKING_TRANSPARENCY,

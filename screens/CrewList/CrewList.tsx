@@ -12,6 +12,10 @@ export type CrewListStackParamList = NativeStackNavigationProp<
   'CrewList'
 >;
 
+/**
+ * CrewList screen displays a list of crew members. If an error occurs, it displays an Error screen.
+ * @param navigation - navigation prop from navigation stack to use for redirecting to CrewMember screen
+ */
 function CrewList({ navigation }: {navigation: CrewListStackParamList}) {
 	const {
 		crew, error, loading, retry,

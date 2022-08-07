@@ -8,6 +8,11 @@ import Loading from '../../components/Loading';
 
 type InitStackParamList = NativeStackNavigationProp<AppStackParamList, 'Init'>;
 
+/**
+ * Init screen checks connectivity and API availability. If both are available,
+ * it navigates to Home screen. If one of them is not available, it navigates to Error screen.
+ * @param navigation - navigation prop from navigation stack coming from App component
+ */
 function Init({	navigation }: { navigation: InitStackParamList}) {
 	const { isOnline, error: errorNet, retry: retryNet } = useCheckNetState();
 	const { isAvailable, error: errorAPI, retry: retryAPI } = useCheckAPI();
